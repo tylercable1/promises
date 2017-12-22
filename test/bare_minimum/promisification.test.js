@@ -19,6 +19,7 @@ describe('Promisification', function() {
       githubAPI.get('/users/someRealUser').reply(200);
 
       // Must return a Bluebird promise. ES6 promise won't work here
+      console.log(getGitHubProfileAsync);
       expect(getGitHubProfileAsync('someRealUser')).to.be.an.instanceOf(Promise);
     });
 
