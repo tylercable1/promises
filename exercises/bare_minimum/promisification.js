@@ -18,7 +18,6 @@ var getGitHubProfile = function(user, callback) {
 
   request.get(options, function(err, res, body) {
     if (err) {
-      console.log(err);
       callback(err, null);
     } else if (body.message) {
       callback(new Error('Failed to get GitHub profile: ' + body.message), null);
